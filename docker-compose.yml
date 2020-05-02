@@ -47,7 +47,7 @@ services:
       - "./cetbot-dns-dnspod-credentials.ini:/etc/cetbot-dns-dnspod-credentials.ini"
 
   resolver:
-    image: mailu/unbound1.7
+    image: mailu/unbound:1.7
     env_file: mailu.env
     restart: always
     volumes:
