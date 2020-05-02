@@ -18,10 +18,10 @@ services:
     volumes:
       - "./mailu/db:/var/lib/mysql"
     environment:
-      MYSQL_ROOT_PASSWORD: notSecureChangeMe
+      MYSQL_ROOT_PASSWORD: Ma1lu
       MYSQL_DATABASE: mailu
       MYSQL_USER: mailu
-      MYSQL_PASSWORD: P4ss0rd
+      MYSQL_PASSWORD: Ma1lu
 
   # Core services
   front:
