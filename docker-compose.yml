@@ -47,7 +47,7 @@ services:
       - "./cetbot-dns-dnspod-credentials.ini:/etc/cetbot-dns-dnspod-credentials.ini"
 
   resolver:
-    image: mailu/unbound:1.7
+    image: scjtqs/mailu-unbound
     env_file: mailu.env
     restart: always
     volumes:
@@ -57,7 +57,7 @@ services:
         ipv4_address: 192.168.203.254
 
   admin:
-    image: scjtqs/mailu-admin
+    image: scjtqs/mailu-admin:all
     restart: always
     env_file: mailu.env
     volumes:
@@ -68,7 +68,7 @@ services:
       - db
 
   imap:
-    image: mailu/dovecot:1.7
+    image: scjtqs/mailu-dovecot
     restart: always
     env_file: mailu.env
     volumes:
@@ -78,7 +78,7 @@ services:
       - front
 
   smtp:
-    image: mailu/postfix:1.7
+    image: scjtqs/mailu-postfix
     restart: always
     env_file: mailu.env
     volumes:
@@ -91,7 +91,7 @@ services:
       - 192.168.203.254
 
   antispam:
-    image: mailu/rspamd:1.7
+    image: scjtqs/mailu-rspamd
     restart: always
     env_file: mailu.env
     volumes:
@@ -106,7 +106,7 @@ services:
 
   # Optional services
   antivirus:
-    image: mailu/clamav:1.7
+    image: scjtqs/mailu-clamav
     restart: always
     env_file: mailu.env
     volumes:
@@ -117,14 +117,14 @@ services:
       - 192.168.203.254
 
   webdav:
-    image: mailu/radicale:1.7
+    image: scjtqs/mailu-radicale
     restart: always
     env_file: mailu.env
     volumes:
       - "./mailu/dav:/data"
 
   fetchmail:
-    image: mailu/fetchmail:1.7
+    image: scjtqs/mailu-fetchmail
     restart: always
     env_file: mailu.env
     depends_on:
@@ -134,7 +134,7 @@ services:
 
   # Webmail
   webmail:
-    image: scjtqs/mailu-rainloop
+    image: scjtqs/mailu-rainloop:all
     restart: always
     env_file: mailu.env
     volumes:
