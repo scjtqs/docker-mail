@@ -134,7 +134,7 @@ services:
 
   # Webmail
   webmail:
-    image: scjtqs/mailu-rainloop:all
+    image: scjtqs/mailu-rainloop
     restart: always
     env_file: mailu.env
     volumes:
