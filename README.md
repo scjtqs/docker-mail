@@ -13,5 +13,11 @@
 
 > `docker-compose up -d`
 
+## 域名访问的一些说明
 
+> /webmail 一个web的邮箱客户端
+
+> /admin 管理后台，可以在mailu.env里面设置是否开启
+
+> /webdav/ 一个webdav服务，后面的斜杠记得加上
 
