@@ -57,7 +57,7 @@ services:
         ipv4_address: 192.168.203.254
 
   admin:
-    image: scjtqs/mailu-admin:all
+    image: scjtqs/mailu-admin
     restart: always
     env_file: mailu.env
     volumes:
