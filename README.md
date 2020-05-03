@@ -10,7 +10,7 @@
 
 > 修改cetbot-dns-dnspod-credentials.ini 加入你的dnspod.cn的注册邮箱、appid、token。
 
-> 邮箱为你的账号邮箱：[https://jose.scjtqs.com/wp-content/uploads/2020/05/You_Xiang.jpg]
+> 邮箱为你的账号邮箱：(https://jose.scjtqs.com/wp-content/uploads/2020/05/You_Xiang.jpg)
 
 > `docker-compose up -d`
 
