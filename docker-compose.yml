@@ -12,7 +12,7 @@ services:
     restart: always
     volumes:
       - "./mailu/redis:/data"
-# db:
+# database:
 #  image: mariadb:10.1
 #    restart: always
 #   volumes:
