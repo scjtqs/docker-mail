@@ -65,7 +65,7 @@ services:
       - "./mailu/dkim:/dkim"
     depends_on:
       - redis
-      - db
+      - database
 
   imap:
     image: scjtqs/mailu-dovecot
