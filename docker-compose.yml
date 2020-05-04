@@ -12,16 +12,16 @@ services:
     restart: always
     volumes:
       - "./mailu/redis:/data"
-  db:
-    image: mariadb:10.1
-    restart: always
-    volumes:
-      - "./mailu/db:/var/lib/mysql"
-    environment:
-      MYSQL_ROOT_PASSWORD: Ma1lu
-      MYSQL_DATABASE: mailu
-      MYSQL_USER: mailu
-      MYSQL_PASSWORD: Ma1lu
+# db:
+#  image: mariadb:10.1
+#    restart: always
+#   volumes:
+#      - "./mailu/db:/var/lib/mysql"
+#    environment:
+#      MYSQL_ROOT_PASSWORD: Ma1lu
+#      MYSQL_DATABASE: mailu
+#      MYSQL_USER: mailu
+#      MYSQL_PASSWORD: Ma1lu
 
   # Core services
   front:
@@ -142,7 +142,14 @@ services:
     depends_on:
       - imap
 
-
+  database:
+    image: scjtqs/mailu-postgresql
+    restart: always
+    env_file: mailu.env
+    volumes:
+      - "./mailu/data/psql_db:/data"
+      - "./mailu/data/psql_backup:/backup"
+      
 networks:
   default:
     driver: bridge
